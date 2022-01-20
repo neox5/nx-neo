@@ -1,0 +1,16 @@
+{
+  "root": "apps/nx-neo-e2e",
+  "projectType": "application",
+  "sourceRoot": "apps/nx-neo-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/nx-plugin:e2e",
+      "options": {
+        "target": "nx-neo:build",
+        "jestConfig": "apps/nx-neo-e2e/jest.config.js"
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["nx-neo"]
+}

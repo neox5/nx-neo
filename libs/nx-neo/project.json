@@ -1,0 +1,56 @@
+{
+  "root": "libs/nx-neo",
+  "sourceRoot": "libs/nx-neo/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/nx-neo/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/nx-neo"],
+      "options": {
+        "jestConfig": "libs/nx-neo/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/nx-neo",
+        "tsConfig": "libs/nx-neo/tsconfig.lib.json",
+        "packageJson": "libs/nx-neo/package.json",
+        "main": "libs/nx-neo/src/index.ts",
+        "assets": [
+          "libs/nx-neo/*.md",
+          {
+            "input": "./libs/nx-neo/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/nx-neo/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/nx-neo",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./libs/nx-neo",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

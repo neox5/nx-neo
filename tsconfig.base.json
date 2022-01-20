@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-neo/nx-neo": ["libs/nx-neo/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

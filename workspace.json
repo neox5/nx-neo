@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "nx-neo": "libs/nx-neo",
+    "nx-neo-e2e": "apps/nx-neo-e2e"
+  }
 }
