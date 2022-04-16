@@ -7,6 +7,11 @@
       "factory": "./src/generators/nx-neo/generator",
       "schema": "./src/generators/nx-neo/schema.json",
       "description": "nx-neo generator"
+    },
+    "simple-component": {
+      "factory": "./src/generators/simple-component/generator",
+      "schema": "./src/generators/simple-component/schema.json",
+      "description": "simple-component generator"
     }
   }
 }

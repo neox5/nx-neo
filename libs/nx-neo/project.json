@@ -5,14 +5,20 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/nx-neo/**/*.ts"]
+        "lintFilePatterns": [
+          "libs/nx-neo/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/nx-neo"],
+      "outputs": [
+        "coverage/libs/nx-neo"
+      ],
       "options": {
         "jestConfig": "libs/nx-neo/jest.config.js",
         "passWithNoTests": true
@@ -20,7 +26,9 @@
     },
     "build": {
       "executor": "@nrwl/node:package",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/libs/nx-neo",
         "tsConfig": "libs/nx-neo/tsconfig.lib.json",
@@ -32,6 +40,11 @@
             "input": "./libs/nx-neo/src",
             "glob": "**/!(*.ts)",
             "output": "./src"
+          },
+          {
+            "input": "./libs/nx-neo",
+            "glob": "**/files/**",
+            "output": "/"
           },
           {
             "input": "./libs/nx-neo/src",
